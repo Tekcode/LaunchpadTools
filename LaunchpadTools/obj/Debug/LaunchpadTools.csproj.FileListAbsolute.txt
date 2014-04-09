@@ -1,0 +1,10 @@
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\bin\Debug\LaunchpadTools.exe
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\bin\Debug\LaunchpadTools.pdb
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.csprojResolveAssemblyReference.cache
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.ABOUT.resources
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.COM_SETTINGS.resources
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.TM4C123GXL_Control.resources
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.SerialMonitor.resources
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.csproj.GenerateResource.Cache
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.exe
+C:\Users\Hazmat\Documents\Visual Studio 2013\Projects\LaunchpadTools\LaunchpadTools\obj\Debug\LaunchpadTools.pdb
