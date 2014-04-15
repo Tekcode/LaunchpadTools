@@ -16,12 +16,12 @@ using System.Windows.Forms;
 
 namespace LaunchpadTools
 {
-    public partial class TM4C123GXL_Control : Form
+    public partial class LaunchpadControl : Form
     {
         // Create new Forms outside a method to allow it to be closed
         SerialMonitor serialForm = null; // Serial Window
 
-        public TM4C123GXL_Control()
+        public LaunchpadControl()
         {
             InitializeComponent();
             
@@ -33,7 +33,7 @@ namespace LaunchpadTools
             platformState(true, false, false); // Only enable M4 Cortex for now
 
             // Menu Item Disable - Remove when features are added
-            disconnectToolStripMenuItem.Enabled = false; // Disable the COM Port disconnect button by default
+            //disconnectToolStripMenuItem.Enabled = false; // Disable the COM Port disconnect button by default
             undoToolStripMenuItem.Enabled = false; // Edit - Undo
             copyToolStripMenuItem.Enabled = false; // Edit - Copy
             cutToolStripMenuItem.Enabled = false; // Edit - Cut
@@ -124,7 +124,7 @@ namespace LaunchpadTools
                 serialForm.MdiParent = this;
                 serialForm.WindowState = FormWindowState.Maximized;
                 serialForm.Show();
-               serialForm.visible = true;
+                serialForm.visible = true;
             }
         }
 

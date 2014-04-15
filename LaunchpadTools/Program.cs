@@ -18,7 +18,7 @@ namespace LaunchpadTools
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TM4C123GXL_Control());
+            Application.Run(new LaunchpadControl());
         }
 
     }
