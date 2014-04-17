@@ -74,6 +74,7 @@
             this.serialRxTextbox.Location = new System.Drawing.Point(6, 19);
             this.serialRxTextbox.Multiline = true;
             this.serialRxTextbox.Name = "serialRxTextbox";
+            this.serialRxTextbox.ReadOnly = true;
             this.serialRxTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.serialRxTextbox.Size = new System.Drawing.Size(738, 371);
             this.serialRxTextbox.TabIndex = 2;

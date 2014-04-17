@@ -30,7 +30,7 @@ namespace LaunchpadTools
             // Data Type Dropdown initialization
             dataTypeDropdown.Items.Add("String");
             dataTypeDropdown.Items.Add("Char");
-            dataTypeDropdown.Items.Add("Byte");
+            dataTypeDropdown.Items.Add("Byte (Hex)");
             dataTypeDropdown.SelectedIndex = 0;
 
             // Set up Threading
@@ -50,14 +50,9 @@ namespace LaunchpadTools
             }
             else
             {
-                SerialTx();
-            }
-            
-        }
-
-        private void SerialTx()
-        {
-            serialCommandTextbox.Text = ""; // Clear textbox
+                LaunchpadTools.Instance.serialTx(serialCommandTextbox.Text, dataTypeDropdown.SelectedIndex);
+                serialCommandTextbox.Text = ""; // Clear the command textbox
+            }         
         }
 
         private void serialPortRead(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
@@ -69,11 +64,6 @@ namespace LaunchpadTools
         private void serialReadToTextbox(object sender, EventArgs e)
         {
             serialRxTextbox.AppendText(rxBuffer);
-        }
-
-        private void refreshComDebug_Click(object sender, EventArgs e)
-        {
-            LaunchpadTools.Instance.m4cSerialPort.Open();
         }
     }
 }

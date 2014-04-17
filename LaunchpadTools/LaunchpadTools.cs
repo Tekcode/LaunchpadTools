@@ -80,9 +80,32 @@ namespace LaunchpadTools
             Properties.Settings.Default.baudRate = baudRate; // Update the baud rate in settings
         }
 
+        // Gets the connected COM Ports
         public string getPortName()
         {
             return this.m4cSerialPort.PortName;
+        }
+
+        // Sends data via serial to the connected com device. Inputs the string data from the textbox and the selected index of the data type
+        public void serialTx(string serialData, int index)
+        {
+            /* 
+             *  INDEX 0 = STRING
+             *  INDEX 1 = CHAR
+             *  INDEX 2 = BYTE
+             */
+            if (index == 0) // STRING
+            {
+                m4cSerialPort.Write(serialData);
+            }
+            else if (index == 1) // CHAR
+            {
+                char[] serialCharData = serialData.ToCharArray(); // Convert a string to a character array due to how the UART is set up on my launchpad
+                m4cSerialPort.Write(serialCharData, 0, serialCharData.Length);
+            } else if (index == 2) // BYTE
+            {
+                //byte serialByteData = serialData.to
+            }
         }
     }
 }

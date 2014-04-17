@@ -33,7 +33,7 @@ namespace LaunchpadTools
             platformState(true, false, false); // Only enable M4 Cortex for now
 
             // Menu Item Disable - Remove when features are added
-            //disconnectToolStripMenuItem.Enabled = false; // Disable the COM Port disconnect button by default
+            disconnectToolStripMenuItem.Enabled = false; // Disable the COM Port disconnect button by default
             undoToolStripMenuItem.Enabled = false; // Edit - Undo
             copyToolStripMenuItem.Enabled = false; // Edit - Copy
             cutToolStripMenuItem.Enabled = false; // Edit - Cut
