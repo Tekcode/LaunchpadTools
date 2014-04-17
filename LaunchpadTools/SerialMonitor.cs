@@ -27,14 +27,18 @@ namespace LaunchpadTools
             serialCommandTextbox.ForeColor = Color.Black;
             LaunchpadTools.Instance.m4cSerialPort.DataReceived += new SerialDataReceivedEventHandler(serialPortRead);
 
+            // Data Type Dropdown initialization
+            dataTypeDropdown.Items.Add("String");
+            dataTypeDropdown.Items.Add("Char");
+            dataTypeDropdown.Items.Add("Byte");
+            dataTypeDropdown.SelectedIndex = 0;
+
             // Set up Threading
             //    Thread SerialTxThread = new Thread(this.serialTx);
             //Thread SerialRxThread = new Thread(this.SerialRx);
 
             //    SerialTxThread.Start();
            // SerialRxThread.Start();
-
-
         }
 
         private void serialCommandSendButton_Click(object sender, EventArgs e)
