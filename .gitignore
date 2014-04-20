@@ -1,2 +1,3 @@
 # Ignore the binary directory
-LaunchpadTools\Bin
+LaunchpadTools\/bin
+LaunchpadTools\/obj
