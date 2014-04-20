@@ -28,10 +28,10 @@ namespace LaunchpadTools
             LaunchpadTools.Instance.m4cSerialPort.DataReceived += new SerialDataReceivedEventHandler(serialPortRead);
 
             // Data Type Dropdown initialization
-            dataTypeDropdown.Items.Add("String");
-            dataTypeDropdown.Items.Add("Char");
-            dataTypeDropdown.Items.Add("Byte (Hex)");
-            dataTypeDropdown.SelectedIndex = 0;
+            serialDataTypeDropdown.Items.Add("String");
+            serialDataTypeDropdown.Items.Add("Char");
+            serialDataTypeDropdown.Items.Add("Byte (Hex)");
+            serialDataTypeDropdown.SelectedIndex = Properties.Settings.Default.serialDataTypeSelection;
 
             // Set up Threading
             //    Thread SerialTxThread = new Thread(this.serialTx);
@@ -50,20 +50,34 @@ namespace LaunchpadTools
             }
             else
             {
-                LaunchpadTools.Instance.serialTx(serialCommandTextbox.Text, dataTypeDropdown.SelectedIndex);
+                LaunchpadTools.Instance.serialTx(serialCommandTextbox.Text, serialDataTypeDropdown.SelectedIndex);
                 serialCommandTextbox.Text = ""; // Clear the command textbox
             }         
         }
 
+        // Invoke an event on serial data received
         private void serialPortRead(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             rxBuffer = LaunchpadTools.Instance.m4cSerialPort.ReadExisting();
             this.Invoke(new EventHandler(serialReadToTextbox));
         }
 
+        // Send received data to the serial rx textbox
         private void serialReadToTextbox(object sender, EventArgs e)
         {
             serialRxTextbox.AppendText(rxBuffer);
+        }
+
+        // Save the data type to send to the COM port on click
+        private void serialDataTypeSend_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.serialDataTypeSelection = serialDataTypeDropdown.SelectedIndex;
+        }
+
+        // Clears the serial received window
+        private void serialRxTextboxClearButton_Click(object sender, EventArgs e)
+        {
+            serialRxTextbox.Text = "";
         }
     }
 }

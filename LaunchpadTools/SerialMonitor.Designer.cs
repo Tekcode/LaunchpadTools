@@ -31,10 +31,12 @@
             this.serialCommandSendButton = new System.Windows.Forms.Button();
             this.serialCommandTextbox = new System.Windows.Forms.TextBox();
             this.serialCommandBox = new System.Windows.Forms.GroupBox();
-            this.serialRxTextbox = new System.Windows.Forms.TextBox();
-            this.dataTypeDropdown = new System.Windows.Forms.ComboBox();
+            this.serialDataTypeSend = new System.Windows.Forms.Button();
             this.dataTransferType = new System.Windows.Forms.Label();
+            this.serialDataTypeDropdown = new System.Windows.Forms.ComboBox();
+            this.serialRxTextbox = new System.Windows.Forms.TextBox();
             this.serialMonitorBox = new System.Windows.Forms.GroupBox();
+            this.serialRxTextboxClearButton = new System.Windows.Forms.Button();
             this.serialCommandBox.SuspendLayout();
             this.serialMonitorBox.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +60,9 @@
             // 
             // serialCommandBox
             // 
+            this.serialCommandBox.Controls.Add(this.serialDataTypeSend);
             this.serialCommandBox.Controls.Add(this.dataTransferType);
-            this.serialCommandBox.Controls.Add(this.dataTypeDropdown);
+            this.serialCommandBox.Controls.Add(this.serialDataTypeDropdown);
             this.serialCommandBox.Controls.Add(this.serialCommandTextbox);
             this.serialCommandBox.Controls.Add(this.serialCommandSendButton);
             this.serialCommandBox.Location = new System.Drawing.Point(12, 12);
@@ -69,23 +72,15 @@
             this.serialCommandBox.TabStop = false;
             this.serialCommandBox.Text = "Serial Command";
             // 
-            // serialRxTextbox
+            // serialDataTypeSend
             // 
-            this.serialRxTextbox.Location = new System.Drawing.Point(6, 19);
-            this.serialRxTextbox.Multiline = true;
-            this.serialRxTextbox.Name = "serialRxTextbox";
-            this.serialRxTextbox.ReadOnly = true;
-            this.serialRxTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.serialRxTextbox.Size = new System.Drawing.Size(738, 371);
-            this.serialRxTextbox.TabIndex = 2;
-            // 
-            // dataTypeDropdown
-            // 
-            this.dataTypeDropdown.FormattingEnabled = true;
-            this.dataTypeDropdown.Location = new System.Drawing.Point(114, 45);
-            this.dataTypeDropdown.Name = "dataTypeDropdown";
-            this.dataTypeDropdown.Size = new System.Drawing.Size(113, 21);
-            this.dataTypeDropdown.TabIndex = 3;
+            this.serialDataTypeSend.Location = new System.Drawing.Point(233, 43);
+            this.serialDataTypeSend.Name = "serialDataTypeSend";
+            this.serialDataTypeSend.Size = new System.Drawing.Size(88, 23);
+            this.serialDataTypeSend.TabIndex = 5;
+            this.serialDataTypeSend.Text = "Save Setting";
+            this.serialDataTypeSend.UseVisualStyleBackColor = true;
+            this.serialDataTypeSend.Click += new System.EventHandler(this.serialDataTypeSend_Click);
             // 
             // dataTransferType
             // 
@@ -96,8 +91,27 @@
             this.dataTransferType.TabIndex = 4;
             this.dataTransferType.Text = "Data Transfer Type:";
             // 
+            // serialDataTypeDropdown
+            // 
+            this.serialDataTypeDropdown.FormattingEnabled = true;
+            this.serialDataTypeDropdown.Location = new System.Drawing.Point(114, 45);
+            this.serialDataTypeDropdown.Name = "serialDataTypeDropdown";
+            this.serialDataTypeDropdown.Size = new System.Drawing.Size(113, 21);
+            this.serialDataTypeDropdown.TabIndex = 3;
+            // 
+            // serialRxTextbox
+            // 
+            this.serialRxTextbox.Location = new System.Drawing.Point(6, 19);
+            this.serialRxTextbox.Multiline = true;
+            this.serialRxTextbox.Name = "serialRxTextbox";
+            this.serialRxTextbox.ReadOnly = true;
+            this.serialRxTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.serialRxTextbox.Size = new System.Drawing.Size(738, 356);
+            this.serialRxTextbox.TabIndex = 2;
+            // 
             // serialMonitorBox
             // 
+            this.serialMonitorBox.Controls.Add(this.serialRxTextboxClearButton);
             this.serialMonitorBox.Controls.Add(this.serialRxTextbox);
             this.serialMonitorBox.Location = new System.Drawing.Point(12, 90);
             this.serialMonitorBox.Name = "serialMonitorBox";
@@ -105,6 +119,16 @@
             this.serialMonitorBox.TabIndex = 4;
             this.serialMonitorBox.TabStop = false;
             this.serialMonitorBox.Text = "Serial Monitor";
+            // 
+            // serialRxTextboxClearButton
+            // 
+            this.serialRxTextboxClearButton.Location = new System.Drawing.Point(669, 381);
+            this.serialRxTextboxClearButton.Name = "serialRxTextboxClearButton";
+            this.serialRxTextboxClearButton.Size = new System.Drawing.Size(75, 23);
+            this.serialRxTextboxClearButton.TabIndex = 3;
+            this.serialRxTextboxClearButton.Text = "Clear";
+            this.serialRxTextboxClearButton.UseVisualStyleBackColor = true;
+            this.serialRxTextboxClearButton.Click += new System.EventHandler(this.serialRxTextboxClearButton_Click);
             // 
             // SerialMonitor
             // 
@@ -136,7 +160,9 @@
         private System.Windows.Forms.GroupBox serialCommandBox;
         public System.Windows.Forms.TextBox serialRxTextbox;
         private System.Windows.Forms.Label dataTransferType;
-        private System.Windows.Forms.ComboBox dataTypeDropdown;
+        private System.Windows.Forms.ComboBox serialDataTypeDropdown;
         private System.Windows.Forms.GroupBox serialMonitorBox;
+        private System.Windows.Forms.Button serialDataTypeSend;
+        private System.Windows.Forms.Button serialRxTextboxClearButton;
     }
 }

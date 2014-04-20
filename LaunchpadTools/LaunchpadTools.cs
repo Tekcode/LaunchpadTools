@@ -100,11 +100,12 @@ namespace LaunchpadTools
             }
             else if (index == 1) // CHAR
             {
-                char[] serialCharData = serialData.ToCharArray(); // Convert a string to a character array due to how the UART is set up on my launchpad
+                char[] serialCharData = serialData.ToCharArray(); // Convert a string to a character array
                 m4cSerialPort.Write(serialCharData, 0, serialCharData.Length);
             } else if (index == 2) // BYTE
             {
-                //byte serialByteData = serialData.to
+                byte[] serialByte = Encoding.ASCII.GetBytes(serialData); // Convert STRING to BYTE
+                m4cSerialPort.Write(serialByte, 0, serialByte.Length);
             }
         }
     }
